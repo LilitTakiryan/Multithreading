@@ -1,4 +1,6 @@
 /*Java Program That counts sum of the numbers from 1 to 10000000 using single thread*/
+package Sum;
+
 public class Sum implements Runnable {
     public static void main(String[] args) {
         Sum sum = new Sum();
@@ -12,7 +14,6 @@ public class Sum implements Runnable {
     public void run() {
         int first = 1;
         int last = 10000000;
-//        int last = 100;
         //n(n + 1)/2
         try {
             System.out.println("Sum of number between " + first + " and " + last + " is "
