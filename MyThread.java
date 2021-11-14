@@ -1,5 +1,4 @@
-/* Java Program that creates 10 files and writes 5000 lines in each file using 2 threads
-*/
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -8,6 +7,7 @@ import java.util.UUID;
 
 class MyFile implements Runnable {
     public static void main(String[] args) throws FileNotFoundException {
+        /* Java Program that creates 10 files and writes 5000 lines in each file using 2 threads*/
         MyFile myFile = new MyFile();
         Thread T1 = new Thread(myFile, "T1");
         T1.setName("T1");
@@ -15,6 +15,15 @@ class MyFile implements Runnable {
         Thread T2 = new Thread(myFile, "T2");
         T2.setName("T2");
         T2.start();
+        /* Java Program that creates 10 files and writes 5000 lines in each file using 1 thread for each file*/
+         int numOfThreads = 10;
+        MyFile myFile = new MyFile();
+        Thread[] T = new Thread [numOfThreads];
+        for(int i=0; i<numOfThreads; i++) {
+           T[i]=new Thread(myFile, "T"+i);
+           T[i].setName("T"+i);
+           T[i].start();
+        }
     }
 
     @Override
