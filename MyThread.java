@@ -1,3 +1,5 @@
+/* Java Program that creates 10 files and writes 5000 lines in each file using 2 threads
+*/
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -50,11 +52,3 @@ class MyFile implements Runnable {
         System.out.println((System.currentTimeMillis() - start / 1000) + " " + Thread.currentThread().getName());
     }
 }
-/*
-
-how to write code that compares processing time and tells which thread was faster
-when run() method doesn't return arguments or take them?
-thought of using set() method in run() but it's not possible to call it using thread,
-could use object, but it is given as a parameter to Thread(), so no use from it
-
-*/
