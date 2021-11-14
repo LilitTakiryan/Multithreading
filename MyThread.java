@@ -7,6 +7,11 @@ import java.util.UUID;
 
 class MyFile implements Runnable {
     public static void main(String[] args) throws FileNotFoundException {
+        /*Java Program that creates 10 files and writes 5000 lines in each file using single thread*/
+        MyFile myFile = new MyFile();
+        Thread T1 = new Thread(myFile, "T1");
+        T1.setName("T1");
+        T1.start();
         /* Java Program that creates 10 files and writes 5000 lines in each file using 2 threads*/
         MyFile myFile = new MyFile();
         Thread T1 = new Thread(myFile, "T1");
