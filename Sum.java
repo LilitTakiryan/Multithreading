@@ -1,5 +1,4 @@
-package Sum;
-
+/*Java Program That counts sum of the numbers from 1 to 10000000 using single thread*/
 public class Sum implements Runnable {
     public static void main(String[] args) {
         Sum sum = new Sum();
