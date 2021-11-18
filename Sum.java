@@ -1,6 +1,8 @@
 /*Java Program That counts sum of the numbers from 1 to 10000000 using single thread*/
 package Sum;
 
+import java.math.BigDecimal;
+
 public class Sum implements Runnable {
     public static void main(String[] args) {
         Sum sum = new Sum();
@@ -14,10 +16,11 @@ public class Sum implements Runnable {
     public void run() {
         int first = 1;
         int last = 10000000;
+        long sum;
         //n(n + 1)/2
         try {
-            System.out.println("Sum of number between " + first + " and " + last + " is "
-                    + ((last * (last + first)) / 2));
+            sum=((long) last * (last + first)) / 2;
+            System.out.println("Sum of number between " + first + " and " + last + " is "+sum);
             Thread.sleep(1000);
         } catch (NumberFormatException | InterruptedException e) {
             e.getStackTrace();
